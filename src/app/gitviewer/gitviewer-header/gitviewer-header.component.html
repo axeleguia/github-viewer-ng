@@ -1,0 +1,19 @@
+<header aria-label="Page Header" class="bg-gray-100 border-b border-gray-400">
+  <div class="p-4">
+    <h1 class="text-3xl mb-4 font-extrabold tracking-tight leading-2 text-gray-900">
+      GitHub Viewer
+    </h1>
+    <div class="mb-2 flex flex-row gap-2">
+      <input type="text" class="border h-10 w-full rounded-md pl-3 text-sm focus:ring-1 focus:blue-100"
+        placeholder="Username" id="owner" [(ngModel)]="owner" (input)="onTypeOwner($event)" />
+      <button type="button"
+        class="text-sm px-4 text-blue-500 rounded whitespace-nowrap hover:ring-1 hover:ring-gray-200"
+        (click)="shouldDisplayApiKey = !shouldDisplayApiKey">
+        Enter API Key
+      </button>
+    </div>
+    <input type="text" class="border h-10 w-full rounded-md pl-3 text-sm focus:ring-1 focus:blue-100"
+    placeholder="Enter API Key" id="apiKey" [(ngModel)]="token" (input)="onTypeApiKey($event)"
+    [ngClass]="{ hidden: !shouldDisplayApiKey }" />
+  </div>
+</header>
